@@ -1,0 +1,25 @@
+#ide{
+    background-image: url(../img/ide.png);
+}
+#html{
+    background-image: url(../img/html.jpg);
+}
+#php{
+    background-image: url(../img/php.png);
+}
+
+#js{
+    background-image: url(../img/js.png);
+}
+#java{
+    background-image: url(../img/java.png);
+}
+#bc{
+    background-image: url(../img/bc.png);
+}
+#nr{
+    background-image: url(../img/nr.png);
+}
+#info_basic{
+    background-image: url(../img/info_basic.png);
+}
