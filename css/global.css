@@ -1,0 +1,19 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0px;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+.menu-a{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.item-menu{
+    width: 10%;
+    height: 10%;
+    background-color: aliceblue;
+    
+}

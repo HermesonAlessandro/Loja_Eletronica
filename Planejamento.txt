@@ -1,0 +1,12 @@
+*Homepage
+-header
+	Logo
+	Informações
+	Aba de pesquisa
+	Carrinho
+	Classificação dos produtos: gamer, pcs e notebooks, hardware, celular, tvs, eletrodomésticos, Tablets
+-main
+	Promoções
+	Classificação dos produtos: gamer, pcs e notebooks, hardware, celular, tvs, eletrodomésticos, Tablets
+-footer
+	Informações
