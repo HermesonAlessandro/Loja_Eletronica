@@ -5,9 +5,8 @@ body{
     background-size:auto;
     position: relative;
 }
-header{background:linear-gradient(rgb(236, 236, 236),transparent);
-
-    background-color: transparent;
+header{
+    background:rgb(115, 177, 238);
     padding: 30px 80px;
     display: flex;
     align-items: center;
@@ -26,7 +25,6 @@ header{background:linear-gradient(rgb(236, 236, 236),transparent);
 }
 main{     
     background-size: cover;
-    text-shadow: 2px 2px 3px black;
     padding:0;
     opacity: 0.96;
 }
@@ -96,7 +94,7 @@ main{
 }
 footer{
     padding: 30px 80px;
-    background: linear-gradient( rgb(19, 19, 19),rgb(30, 29, 29));
+    background: rgb(169, 230, 181);
     text-shadow: 2px 2px 3px black;
     display: flex;
     flex-direction: row;
@@ -209,7 +207,7 @@ footer{
     margin-left: 0px;
 }
 .topicos{
-    background: rgb(46, 46, 46);
+    background: rgb(115, 177, 238);
     display: flex;
     flex-wrap: wrap;
     margin-left: 0px;
@@ -219,6 +217,7 @@ footer{
     display: flex;
 }
 .caixa{
+    background-color: white;
     font-size: 10px;
     width: 300px;
     height: 260px;
@@ -241,25 +240,5 @@ footer{
 .caixa:hover{
     transform: scale(1.1);
 }
-#ide{
-    background:radial-gradient(transparent,black);
-}
-#html{
-    background:radial-gradient(transparent,black);
-}
-#php{
-    background:radial-gradient(transparent,black);
-}
-#js{
-    background:radial-gradient(transparent,black);
-}
-#java{
-    background:radial-gradient(transparent,black);
-}
-#bc{
-    background:radial-gradient(transparent,black);
-}
-#ap{
-    background:radial-gradient(transparent,black);
-}
+
 
