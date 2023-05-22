@@ -7,7 +7,7 @@ body{
 }
 header{
     background:rgb(115, 177, 238);
-    padding: 30px 80px;
+    padding: 15px 40px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -162,9 +162,10 @@ footer{
     margin-bottom: 2px;
 }
 .navigation{
-    width: 15%;
+    width: 25%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .navigation-footer{
     width: 30%;
@@ -234,7 +235,7 @@ footer{
     background-size: 100%;
     text-align: center;
     transition: transform 0.2s;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 1px 1px 1px black;
     border-radius: 5px;
 }
 .caixa:hover{
