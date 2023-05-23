@@ -144,6 +144,11 @@ footer{
     background-color: rgb(255, 255, 255);
     color:rgb(21, 0, 255);
 }
+.pesquisa{
+    width: 50%;
+    height: 15px;
+    font-size: 40px;
+}
 .campotxt{
     text-align: right;
     background: radial-gradient(transparent,rgb(46,46,46));
@@ -209,9 +214,48 @@ footer{
 }
 .topicos{
     background: rgb(115, 177, 238);
-    display: flex;
-    flex-direction: row;
-    margin-left: 0px;
+    display: grid;
+    grid-template-areas: 
+    "i1 i2 i3 i4 i5"
+    "i6 i7 i8 i9 i10";
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 100px;
+    align-content: space-evenly;
+}
+#item1{
+    grid-area: i1;
+}
+#item1{
+    grid-area: i1;
+}
+#item2{
+    grid-area: i2;
+}
+#item3{
+    grid-area: i3;
+}
+#item4{
+    grid-area: i4;
+}
+#item5{
+    grid-area: i5;
+}
+#item6{
+    grid-area: i6;
+}
+#item7{
+    grid-area: i7;
+}
+#item8{
+    grid-area: i8;
+}
+#item9{
+    grid-area: i9;
+}
+#item10{
+    grid-area: i10;
 }
 .topicos-linha{
     background: rgb(46, 46, 46);
@@ -237,6 +281,13 @@ footer{
 }
 .caixa:hover{
     transform: scale(1.1);
+}
+.icon{
+    margin: 0px;
+    transition: transform 0.2s;
+}
+.icon:hover{
+    transform: scale(1.19);
 }
 
 

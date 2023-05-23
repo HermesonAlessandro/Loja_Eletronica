@@ -13,12 +13,25 @@
     flex-direction: column;
     background: rgb(41, 95, 232);
 }
+.active-main{
+    color: black;
+    text-shadow: none;
+    margin: 15px;
+    transition: background-color 0.5s
+}
+.active-main:hover{
+    color: rgb(21, 0, 255);
+}
 .titulo-main{
     font-size: 30px;
     color: black;
     text-shadow: none;
     margin: 15px;
-    transition: transform 5s;
+    transition: background-color 0.5s
+}
+.titulo-main:hover{
+    background-color: white;
+    color: rgb(21, 0, 255);
 }
 #margem{
     margin: 5px;
