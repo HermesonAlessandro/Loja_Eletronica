@@ -20,19 +20,35 @@
     transition: background-color 0.5s
 }
 .active-main:hover{
-    color: rgb(21, 0, 255);
+    text-decoration: underline;
 }
 .titulo-main{
     font-size: 30px;
     color: black;
     text-shadow: none;
     margin: 15px;
-    transition: background-color 0.5s
+    transition: transform 0.2s;
 }
 .titulo-main:hover{
-    background-color: white;
-    color: rgb(21, 0, 255);
+    transform: scale(1.1);
 }
 #margem{
     margin: 5px;
+}
+.search-box{
+    background-color: black;
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+}
+.search-txt{
+    border: none;
+    background: none;
+    outline: none;
+}
+.search-btl{
+    color: blue;
 }

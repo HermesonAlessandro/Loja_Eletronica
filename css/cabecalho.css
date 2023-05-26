@@ -141,7 +141,7 @@ footer{
 }
 .logo:hover{
     border-color: rgb(1, 6, 255);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     color:rgb(21, 0, 255);
 }
 .pesquisa{
@@ -167,7 +167,7 @@ footer{
     margin-bottom: 2px;
 }
 .navigation{
-    width: 25%;
+    width: 30%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -199,7 +199,7 @@ footer{
 }
 .active:hover{
     border-color: rgb(1, 6, 255);
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
     color:rgb(21, 0, 255);
 }
 .tituloComum{
@@ -216,46 +216,45 @@ footer{
     background: rgb(115, 177, 238);
     display: grid;
     grid-template-areas: 
-    "i1 i2 i3 i4 i5"
-    "i6 i7 i8 i9 i10";
-    padding-top: 100px;
-    padding-left: 100px;
-    padding-right: 100px;
-    padding-bottom: 100px;
-    align-content: space-evenly;
+    "i1 i2"
+    "i3 i4"
+    "i5 i6"
+    "i7 i8"
+    "i9 i10";
+    gap: 50px;
 }
 #item1{
-    grid-area: i1;
+    grid-area: 'i1';
 }
 #item1{
-    grid-area: i1;
+    grid-area: 'i1';
 }
 #item2{
-    grid-area: i2;
+    grid-area: 'i2';
 }
 #item3{
-    grid-area: i3;
+    grid-area: 'i3';
 }
 #item4{
-    grid-area: i4;
+    grid-area: 'i4';
 }
 #item5{
-    grid-area: i5;
+    grid-area: 'i5';
 }
 #item6{
-    grid-area: i6;
+    grid-area: 'i6';
 }
 #item7{
-    grid-area: i7;
+    grid-area: 'i7';
 }
 #item8{
-    grid-area: i8;
+    grid-area: 'i8';
 }
 #item9{
-    grid-area: i9;
+    grid-area: 'i9';
 }
 #item10{
-    grid-area: i10;
+    grid-area: 'i10';
 }
 .topicos-linha{
     background: rgb(46, 46, 46);
@@ -264,8 +263,8 @@ footer{
 .caixa{
     background-color: white;
     font-size: 10px;
-    width: 300px;
-    height: 260px;
+    width: 230px;
+    height: 230px;
     color: white;
     padding: 10px;
     display: flex;
@@ -273,7 +272,6 @@ footer{
     align-items: center;
     justify-content: center;
     background-repeat: no-repeat;
-    background-size: 100%;
     text-align: center;
     transition: transform 0.2s;
     box-shadow: 1px 1px 1px black;
