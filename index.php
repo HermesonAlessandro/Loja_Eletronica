@@ -1,6 +1,9 @@
 <!DOCTYPE html>
+<?php 
+	include("php/conexao.php");
+?>
 <html>
-<head>
+	<head>
 		<meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">	
 		<link rel="stylesheet" type="text/css" href="css/cabecalho.css">
@@ -42,7 +45,7 @@
 				</div>
 			</div>
 			<div class="topicos">
-				<a href=""><div class="caixa" id="item1" id="ide"><h1 class="titulo-main">Gamer</h1>
+				<a href="../Loja_Eletronica/html/gamer.html"><div class="caixa" id="item1" id="ide"><h1 class="titulo-main">Gamer</h1>
 					<img class="icone" width="85px" height="108px" src="../Loja_Eletronica/img/ps5.jpg" alt="">
 					<div class="ex-topico">
 						<h2 class="active" style="margin-top: 5px;">Console Sony Playstation 5 + Controle Sem fio PS5 DualSense</h2>

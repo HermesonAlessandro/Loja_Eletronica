@@ -231,6 +231,19 @@ footer{
     border-radius: 30px;    
     
 }
+.topicos-compra{
+    padding: 50px;
+    margin: 50px;
+    display: grid;
+    grid-template-areas: 
+    "i1 i2"
+    "i3 i4"
+    "i5 i6"
+    "i7 i8";
+    gap: 50px;
+    background: rgb(115, 177, 238);
+    border-radius: 30px; 
+}
 #item1{
     grid-area: 'i1';
 }
