@@ -2,7 +2,7 @@
 $hostname = "localhost";
 $database = "power_tech";
 $usuario = "root";
-$senha = ""
+$senha = "";
 
 $mysqli = new mysqli($hostname, $usuario, $senha, $database);
 if($mysqli->connect_errno){
