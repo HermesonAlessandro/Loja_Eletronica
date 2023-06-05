@@ -21,9 +21,9 @@ include("php/conexao.php");
 			</div>
 			<ul class="navigation">
 				<li><a href="" class="active">Incio</a></li>
-				<li><a href=""  class="active">Html</a></li>
-				<li><a href=""  class="active">Java</a></li>
-				<li><a href=""  class="active">Mysql</a></li>
+				<li><a href=""  class="active">Login</a></li>
+				<li><a href=""  class="active">Cadastrar</a></li>
+				<li><a href=""  class="active">Sobre nos</a></li>
 				<li class="icon"><a href=""><img src="../Loja_Eletronica/img/simple-icon.png" width="119px" height="157px"></a></li>
 			</ul>
 		</header>
@@ -50,17 +50,23 @@ include("php/conexao.php");
 						$tipo = array("gamer","eletrodomesticos","vigESec","celulares","tablets","tvs", "hardware","iluminacao",
 						"notebooks");	
 						echo"<a href='../Loja_Eletronica/html/".$tipo[$contador].".html'>";
-						$sql = "SELECT * FROM produto WHERE tipo ='".$tipo[$contador]."' AND promocao='10'";
+						$sql = "SELECT * FROM produto WHERE tipo ='".$tipo[$contador]."' AND desconto='30'";
 						$result = $mysqli->query($sql);
 						$produto_data = mysqli_fetch_assoc($result);					
 						echo "<div class='caixa' id='item".($contador + 1)."' id='ide'>";
-						echo "<h1 class='titulo-main'>".$tipo[$contador]."</h1>"
+						echo "<h1 class='titulo-main'>".$tipo[$contador]."</h1>";
 						echo "<img class='icone' width='85px' height='108px' src='../Loja_Eletronica/img/".$produto_data['imagem']."' alt=''>";
 						echo "<div class='ex-topico'/>
-								<h2 class='active' style='margin-top: 5px; text-transform: capitalize;'>".$produto_data['descricao']."</h2>
-								<h3 class='titulo-main'>R$ ".$produto_data['preco']."</h3>
-								<h2 class='active' style='margin-top: 5px;'>À vista no PIX com até ".$produto_data['desconto']." % OFF</h2>
-							</div>
+							<h2 class='active' style='margin-top: 5px;'>".$produto_data['nome']."</h2>
+							<h2 class='active' style='margin-top: 5px; text-transform: capitalize;'>".$produto_data['descricao']."</h2>";
+								if($produto_data['desconto'] != null):
+									echo "<h3 class='titulo-main' style='text-decoration:line-through;'>R$ ".$produto_data['preco']."</h3>";
+									echo "<h3 class='titulo-main'>R$ ".$produto_data['preco'] - ($produto_data['preco'] * ($produto_data['desconto'] / 100))."</h3>";
+									echo "<h2 class='active' style='margin-top: 5px;'>À vista no PIX com até ".$produto_data['desconto']." % OFF</h2>";
+								else:	
+									echo "<h3 class='titulo-main'>R$ ".$produto_data['preco']."</h3>";
+								endif;
+						echo "</div>
 						</div></a>";
 					endfor;
 				?>
