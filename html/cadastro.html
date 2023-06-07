@@ -27,45 +27,40 @@
         </ul>
     </header>
     <main>
-        <div class="topico-maior-superior">				
-            <div id="margem">
-                <a href="" class="active-main">Baixe o APP</a>
-            </div>
-            <div id="margem">
-                <a href="" class="active-main">Serviços</a>
-            </div>
-            <div id="margem">
-                <a href="" class="active-main">Oferta do dia</a>
-            </div>
-        </div>
-        <div class="topico-maior-superior-a">
-            <div class="topico-maior">
-                <a href="" class="titulo-main">CONFIRA NOSSAS MAIORES OFERTAS!</a>
-            </div>
-        </div>
-        <div class="formul">
-            <div class="corp-form">              
-                <h1>Cadastrar</h1>
-                <form method="POST" action="processa.php" class="credencial"> 
+        <div class="credencial"> 
+                <p class=" paragrafo-comum">Crie sua conta na sua conta para ter experiências personalizadas</p> 
+                <p>e ver o que você deseja mais facilmete</p>            
+                <h1 class="h1-formulario">Cadastro</h1>
+                <form method="POST" action="processa.php" class="cadastro-comum"> 
                     <input class="label" type="text" placeholder="cpf" name="cpf">
-                    <input class="label" type="text" placeholder="nome" name="nome">
-                    <input class="label" type="text" placeholder="sobrenome" name="sobrenome">
+                    <div class="linha-cadastro">
+                        <input class="label" type="text" placeholder="nome" name="nome">
+                        <input class="label" type="text" placeholder="sobrenome" name="sobrenome">
+                    </div>
                     <input class="label" type="number" placeholder="(99)99999-9999" name="telefone">
                     <input class="label" type="text" placeholder="email" name="email">
                     <input class="label" type="password " placeholder="senha" name="senha">
-                    <div>
-                        <input class="" type="radio" value="M" name="sexo">
-                        <label>masculino</label>
-                    </div>
-                    <div>
-                        <input class="" type="radio" value="Feminino" name="sexo">
-                        <label>feminino</label> 
+                    <div class = "linha-cadastro">                    
+                        <div>
+                            <input class="" type="radio" value="M" name="sexo">
+                            <label>masculino</label>
+                        </div>
+                        <div>
+                            <input class="" type="radio" value="Feminino" name="sexo">
+                            <label>feminino</label> 
+                        </div>
+                        <div>
+                            <input class="" type="radio" value="Feminino" name="sexo">
+                            <label>Ocultar</label> 
+                        </div>
                     </div>
                     <input class="label" type="endereço" placeholder="endereço">        
-                    <input class="button" type="submit" value="ACESSAR">    
-                </form> 
-            </div>  
-        </div>
+                    <input class="button" type="submit" value="Cadastrar"> 
+                    <a href="">Ja está cadastrado? <strong class="link-comum">Faça login</strong></a>
+                </form>
+                <p class="paragrafo-comum">Ao continuar o acesso, você concorda com a <p class="destaque">política de privacidade</p></p>
+            </div>
+        </div>  
     </main>
     <footer>
         <div class="footer-coluna">
