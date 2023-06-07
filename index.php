@@ -21,8 +21,8 @@ include("php/conexao.php");
 			</div>
 			<ul class="navigation">
 				<li><a href="" class="active">Incio</a></li>
-				<li><a href=""  class="active">Login</a></li>
-				<li><a href=""  class="active">Cadastrar</a></li>
+				<li><a href="htlm/login.html"  class="active">Login</a></li>
+				<li><a href="htlm/cadastro.html"  class="active">Cadastrar</a></li>
 				<li><a href=""  class="active">Sobre nos</a></li>
 				<li class="icon"><a href=""><img src="../Loja_Eletronica/img/simple-icon.png" width="119px" height="157px"></a></li>
 			</ul>
