@@ -61,4 +61,8 @@
     flex-direction: column;
     background-color: rgb(115, 177, 238);
 }
+.main-principal{    
+    justify-content: center;
+    align-items: center; 
+}
 

@@ -82,7 +82,7 @@ include("php/conexao.php");
 					<li class="lista-padrao"><a href="index.html" class="conteudo-footer">Lucas Machado</a></li>
 					<li class="lista-padrao"><a href="#" class="conteudo-footer">Hermeson Alessandro</a></li>
 					<li class="lista-padrao"><a href="#"  class="conteudo-footer">Kalebe Ribeiro</a></li>
-					<li class="lista-padrao"><a href="#"  class="conteudo-footer">Pedro Eduardo</a></li>
+							<li class="lista-padrao"><a href="#"  class="conteudo-footer">Pedro Eduardo</a></li>
 					<li class="lista-padrao"><a href="#"  class="conteudo-footer">Erika Silva</a></li>
 				</ul>
 			</div>

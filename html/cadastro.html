@@ -45,14 +45,26 @@
         </div>
         <div class="formul">
             <div class="corp-form">              
-                <h1>Entrar</h1>
+                <h1>Cadastrar</h1>
                 <form method="POST" action="processa.php" class="credencial"> 
-                    <input class="label" type="email" placeholder="Email" name="email">
-                    <input class="label" type="password" placeholder="Senha" name="senha">
-                    <input class="button" type="submit" value="ACESSAR">
-                    <a href="">Ainda não está inscrito? <strong>Cadastre-se!</strong></a>
+                    <input class="label" type="text" placeholder="cpf" name="cpf">
+                    <input class="label" type="text" placeholder="nome" name="nome">
+                    <input class="label" type="text" placeholder="sobrenome" name="sobrenome">
+                    <input class="label" type="number" placeholder="(99)99999-9999" name="telefone">
+                    <input class="label" type="text" placeholder="email" name="email">
+                    <input class="label" type="password " placeholder="senha" name="senha">
+                    <div>
+                        <input class="" type="radio" value="M" name="sexo">
+                        <label>masculino</label>
+                    </div>
+                    <div>
+                        <input class="" type="radio" value="Feminino" name="sexo">
+                        <label>feminino</label> 
+                    </div>
+                    <input class="label" type="endereço" placeholder="endereço">        
+                    <input class="button" type="submit" value="ACESSAR">    
                 </form> 
-            </div>
+            </div>  
         </div>
     </main>
     <footer>
