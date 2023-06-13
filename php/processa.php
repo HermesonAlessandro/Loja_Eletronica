@@ -12,10 +12,10 @@
     $u = new Usuario;
     if(!empty($cpf) && !empty($nome) && !empty($telefone) && !empty($email) && !empty($senha) && 
     !empty($sexo) && !empty($endereco)){
-        $u->conectar("mathpbd","localhost", "root", "");
-        if($u-msgErro == ""){
+        $u->conectar("power_tech","localhost", "root", "");
+        if($u->msgErro == ""){
             if($senha == $confSenha){
-                if(u$->cadastrar($nome, $pemail, $senha, $sexo, $serie, $turma)){
+                if($u->cadastrar($nome, $telefone, $email, $senha, $sexo, $endereco)){
                     echo "Cadastrado com sucesso!"
                 }
                 else(
