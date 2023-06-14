@@ -22,7 +22,7 @@ public class Usuario{
             return false;   
         }
         else{
-            $sql = $pdo->prepare("INSERT INTO usuario (cpf, nome, numero, email, senha, sexo, endereco) VALUES 
+            $sql = $pdo->prepare("INSERT INTO cliente (cpf, nome, numero, email, senha, sexo, endereco) VALUES 
             (:c, :n, :num, :e, :sen, :s, :en)");
             $sql->bindValue(":c", $cpf);
             $sql->bindValue(":n", $nome);
