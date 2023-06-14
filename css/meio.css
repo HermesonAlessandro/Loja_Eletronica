@@ -35,24 +35,8 @@
 }
 #margem{
     margin: 5px;
-}
-.search-box{
-    background-color: black;
-    border-radius: 30px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 50%;
-}
-.search-txt{
-    border: none;
-    background: none;
-    outline: none;
-}
-.search-btl{
-    color: blue;
-}
+}     
+
 .login{
     border-radius: 30px;
     margin: 50px;
@@ -65,4 +49,6 @@
     justify-content: center;
     align-items: center; 
 }
+
+
 

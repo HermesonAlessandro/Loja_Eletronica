@@ -14,11 +14,8 @@ include("php/conexao.php");
 		<header class="cabecalho">
 			<a href="index.html" class="logo">Power Tech</a>
 			<div class="search-box">
-			<input tupy="text" name="pesquisa" class="search-txt" placeholder="Pesquisar"/>
-			<a href="#" class="search-blt">
-				<img src="../Loja_Eletronica/img//loupe.png" alt="Lupa" height="20px" width="20px">
-			</a>
-			</div>
+				<input tupy="text" name="pesquisa" class="search-txt" placeholder="Pesquisar"/>
+        	</div>
 			<ul class="navigation">
 				<li><a href="" class="active">Incio</a></li>
 				<li><a href="htlm/login.html"  class="active">Login</a></li>

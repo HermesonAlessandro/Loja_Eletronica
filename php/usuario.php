@@ -36,11 +36,12 @@ public class Usuario{
         }
     }
 
-    public finction logar($email, $senha){
+    public function logar($email, $senha, $tipoUso){
         global $pdo;
-        $sql = $pdo->prepare("SELECT cpf FROM usuario WHERE email = :e AND senha = :sen")
+        $sql = $pdo->prepare("SELECT cpf FROM ".$tipoUso." WHERE email = :e AND senha = :sen")
         $sql->bindValue(":e", $email);
         $sql->bindValue(":sen", md5($senha));
+        $sql->bindValue(":tip", $tipoUso);
         $sql->execute();
         if($sql->rowCount() > 0){
             $dado = $sql->fetch();
