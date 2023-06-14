@@ -54,8 +54,7 @@ include("php/conexao.php");
 						echo "<h1 class='titulo-main'>".$tipo[$contador]."</h1>";
 						echo "<img class='icone' width='85px' height='108px' src='../Loja_Eletronica/img/".$produto_data['imagem']."' alt=''>";
 						echo "<div class='ex-topico'/>
-							<h2 class='active' style='margin-top: 5px;'>".$produto_data['nome']."</h2>
-							<h2 class='active' style='margin-top: 5px; text-transform: capitalize;'>".$produto_data['descricao']."</h2>";
+							<h2 class='active' style='margin-top: 5px;'>".$produto_data['nome']."</h2>";
 								if($produto_data['desconto'] != null):
 									echo "<h3 class='titulo-main' style='text-decoration:line-through;'>R$ ".$produto_data['preco']."</h3>";
 									echo "<h3 class='titulo-main'>R$ ".$produto_data['preco'] - ($produto_data['preco'] * ($produto_data['desconto'] / 100))."</h3>";
