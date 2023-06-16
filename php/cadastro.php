@@ -31,7 +31,7 @@
                 <p class=" paragrafo-comum">Crie sua conta na sua conta para ter experiências personalizadas</p> 
                 <p>e ver o que você deseja com mais facilmete</p>            
                 <h1 class="h1-formulario">Cadastro</h1>
-                <form method="POST" action="processa.php" class="cadastro-comum"> 
+                <form method="POST" class="cadastro-comum"> 
                     <input class="label" type="text" placeholder="cpf" name="cpf">
                     <div class="linha-cadastro">
                         <input class="label" type="text" placeholder="nome" name="nome">
@@ -40,7 +40,7 @@
                     <input class="label" type="number" placeholder="+55 (99) 99999-9999" name="telefone">
                     <input class="label" type="text" placeholder="email" name="email">
                     <input class="label" type="password" placeholder="senha" name="senha">
-                    <input class="label" type="password" placeholder="confirmar senha" name="senha">
+                    <input class="label" type="password" placeholder="confirmar senha" name="confirmarSenha">
                     <div class="linha-cadastro">                    
                         <div>
                             <input class="" type="radio" value="m" name="sexo">
@@ -60,6 +60,55 @@
                     <a href="">Ja está cadastrado? <strong class="link-comum">Faça login</strong></a>
                 </form>
                 <p class="paragrafo-comum">Ao continuar o acesso, você concorda com a <p class="destaque">política de privacidade</p></p>
+                <?php
+                    $cpf = addlashes($_POST['cpf']);
+                    $nome = addlashes($_POST['nome']);
+                    $sobrenome = addlashes($_POST['sobrenome']);  
+                    $telefone = addlashes($_POST['telefone']);
+                    $email = addlashes($_POST['email']); 
+                    $senha = addlashes($_POST['senha']);
+                    $confSenha = addcslashes($_POST['confirmarSenha']);
+                    $sexo = addlashes($_POST['sexo']);
+                    $endereco = addlashes($_POST['endereco']);
+
+                    require_once "usuario.php";
+                    $u = new Usuario;
+                    if(!empty($cpf) && !empty($nome) && !empty($sobrenome) && !empty($telefone) && !empty($email) && !empty($senha) && 
+                    !empty($sexo) && !empty($endereco)){
+                        $u->conectar("power_tech","localhost", "root", "");
+                        if($u->msgErro == ""){
+                            if($senha == $confSenha){
+                                if($u->cadastrar($nome, $sobrenome, $telefone, $email, $senha, $sexo, $endereco)){
+                                    echo "Cadastrado com sucesso!";
+                                }
+                                else{
+                                    ?>
+                                    <div class="msg-erro">                    
+                                    "Email já cadastrado!"
+                                    </div>
+                                    <?php
+                                }
+                            }
+                            else{
+                                ?>
+                                <div class="msg-erro">                    
+                                "Senha e confirmar senha nao correspondem!"
+                                </div>
+                                <?php
+                }
+            }
+            else{
+                echo "Erro: ",$u->msErro;
+            }
+        }
+        else{
+            ?>
+            <div class="msg-erro">                    
+            "Preencha todos os campos!"
+            </div>
+            <?php
+        }
+?>
             </div>
         </div>  
     </main>

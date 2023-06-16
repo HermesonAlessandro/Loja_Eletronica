@@ -13,7 +13,7 @@ public class Usuario{
         }
     }
     
-    public function cadastrar($cpf, $nome, $numero, $email, $senha, $sexo, $endereco){
+    public function cadastrar($cpf, $nome, $sobrenome, $numero, $email, $senha, $sexo, $endereco){
         global $pdo;
         sql = $pdo->prepare("SELECT cpf FROM cliente WHERE email = :e");
         sql->bindvalue(":e",$email);
@@ -22,10 +22,11 @@ public class Usuario{
             return false;   
         }
         else{
-            $sql = $pdo->prepare("INSERT INTO cliente (cpf, nome, numero, email, senha, sexo, endereco) VALUES 
+            $sql = $pdo->prepare("INSERT INTO cliente (cpf, nome, sobrenome, numero, email, senha, sexo, endereco) VALUES 
             (:c, :n, :num, :e, :sen, :s, :en)");
             $sql->bindValue(":c", $cpf);
             $sql->bindValue(":n", $nome);
+            $sql->bindValue("sob", $sobrenome)
             $sql->bindValue(":num", md5($numero));
             $sql->bindValue(":e", $email);
             $sql->bindValue(":sen", $senha);
