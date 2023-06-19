@@ -21,12 +21,12 @@ class Usuario{
             return false;   
         }
         else{
-            $sql = $pdo->prepare("INSERT INTO cliente ($cpf, $nome, $sobrenome, $numero, $email, $senha, $sexo, $endereco) VALUES 
-            (:c, :n, :num, :e, :sen, :s, :en)");
+            $sql = $pdo->prepare("INSERT INTO cliente (cpf, nome, sobrenome, telefone, email, senha, sexo, endereco) VALUES 
+            (:c, :n, :sn, :tel, :e, :sen, :s, :en)");
             $sql->bindValue(":c", $cpf);
             $sql->bindValue(":n", $nome);
-            $sql->bindValue("sob", $sobrenome)
-            $sql->bindValue(":num", $numero);
+            $sql->bindValue(":sn", $sobrenome);
+            $sql->bindValue(":tel", $telefone);
             $sql->bindValue(":e", $email);
             $sql->bindValue(":sen", md5($senha));
             $sql->bindValue(":s", $sexo);
@@ -38,7 +38,7 @@ class Usuario{
 
     public function logar($email, $senha, $tipoUso){
         global $pdo;
-        $sql = $pdo->prepare("SELECT cpf FROM ".$tipoUso." WHERE email = :e AND senha = :sen")
+        $sql = $pdo->prepare("SELECT cpf FROM ".$tipoUso." WHERE email = :e AND senha = :sen");
         $sql->bindValue(":e", $email);
         $sql->bindValue(":sen", md5($senha));
         $sql->bindValue(":tip", $tipoUso);

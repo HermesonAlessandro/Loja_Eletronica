@@ -30,7 +30,6 @@
         <div class="credencial"> 
                 <p class=" paragrafo-comum">Entre na sua conta para ter experiências personalizadas</p> 
                 <p>e ver o que você deseja com mais facilmete</p>            
-                <h1 class="h1-formulario">Login</h1>
                 <form method="POST" class="login-comum"> 
                     <input class="label" type="email" placeholder="Email" name="email">
                     <input class="label" type="password" placeholder="Senha" name="senha">
@@ -51,9 +50,9 @@
                     <?php
             if(isset($_POST['email']))
             {
-            $email = addcslashes($_POST['email']);
-            $senha = addcslashes($_POST['senha']);
-            $tipoUso = addcslashes($_POST['tipoUso']);
+            $email = addslashes($_POST['email']);
+            $senha = addslashes($_POST['senha']);
+            $tipoUso = addslashes($_POST['tipoUso']);
 
             if(!empty($email) && !empty($senha) && !empty($tipoUso))
             {

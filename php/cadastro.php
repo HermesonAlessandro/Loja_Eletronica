@@ -30,7 +30,6 @@
         <div class="credencial"> 
                 <p class=" paragrafo-comum">Crie sua conta na sua conta para ter experiências personalizadas</p> 
                 <p>e ver o que você deseja com mais facilmete</p>            
-                <h1 class="h1-formulario">Cadastro</h1>
                 <form method="POST" class="cadastro-comum"> 
                     <input class="label" type="text" placeholder="cpf(sem traços ou pontos" name="cpf">
                     <div class="linha-cadastro">
@@ -61,15 +60,17 @@
                 </form>
                 <p class="paragrafo-comum">Ao continuar o acesso, você concorda com a <p class="destaque">política de privacidade</p>
                 <?php
-                    $cpf = addlashes($_POST['cpf']);
-                    $nome = addlashes($_POST['nome']);
-                    $sobrenome = addlashes($_POST['sobrenome']);  
-                    $telefone = addlashes($_POST['telefone']);
-                    $email = addlashes($_POST['email']); 
-                    $senha = addlashes($_POST['senha']);
-                    $confSenha = addcslashes($_POST['confirmarSenha']);
-                    $sexo = addlashes($_POST['sexo']);
-                    $endereco = addlashes($_POST['endereco']);
+                isset($_POST['cpf'])
+                {
+                    $cpf = addslashes($_POST['cpf']);
+                    $nome = addslashes($_POST['nome']);
+                    $sobrenome = addslashes($_POST['sobrenome']);  
+                    $telefone = addslashes($_POST['telefone']);
+                    $email = addslashes($_POST['email']); 
+                    $senha = addslashes($_POST['senha']);
+                    $confSenha = addslashes($_POST['confirmarSenha']);
+                    $sexo = addslashes($_POST['sexo']);
+                    $endereco = addslashes($_POST['endereco']);
 
                     require_once "usuario.php";
                     $u = new Usuario;
@@ -78,7 +79,7 @@
                         $u->conectar("power_tech","localhost", "root", "");
                         if($u->msgErro == ""){
                             if($senha == $confSenha){
-                                if($u->cadastrar($nome, $sobrenome, $telefone, $email, $senha, $sexo, $endereco)){
+                                if($u->cadastrar($cpf, $nome, $sobrenome, $telefone, $email, $senha, $sexo, $endereco)){
                                     ?>
                                     <div class="msg-sucesso">                    
                                     "Cadastrado com sucesso!"
@@ -99,20 +100,21 @@
                                 "Senha e confirmar senha nao correspondem!"
                                 </div>
                                 <?php
+                            }
+                        }
+                        else{
+                            echo "Erro: ",$u->msErro;
+                        }
+                    }
+                    else{
+                        ?>
+                        <div class="msg-erro">                    
+                        "Preencha todos os campos!"
+                        </div>
+                        <?php
+                    }
                 }
-            }
-            else{
-                echo "Erro: ",$u->msErro;
-            }
-        }
-        else{
-            ?>
-            <div class="msg-erro">                    
-            "Preencha todos os campos!"
-            </div>
-            <?php
-        }
-    ?>
+                        ?>
             </div>
         </div>  
     </main>
