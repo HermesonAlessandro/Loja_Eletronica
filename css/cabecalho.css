@@ -376,6 +376,35 @@ footer{
 .link-comum:hover{
     text-decoration: underline;
 }
+.msg-sucesso{
+    width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgba(50, 205, 50,.3);
+    border: 1px solid rgb(34,139,34);
+
+}
+.msg-erro{
+    width: 400px;
+    margin: 10px auto;
+    padding: 10px;
+    background-color: rgba(250, 128, 144,.3);
+    border: 1px solid rgb(165,42,42);
+
+}
+.opcao{
+    font-size: 13px;
+    transition: background-color 0.5s;
+    color: rgb(0, 0, 0);
+    border: rgb(0, 0, 0);
+    border-radius: 30px;
+    padding: 5px;
+}
+.opcao:hover{
+    border-color: rgb(41, 95, 232   );
+    background-color: rgb(0, 0, 0);
+    color:rgb(41, 95, 232);
+}
 
 
 

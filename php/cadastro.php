@@ -32,7 +32,7 @@
                 <p>e ver o que você deseja com mais facilmete</p>            
                 <h1 class="h1-formulario">Cadastro</h1>
                 <form method="POST" class="cadastro-comum"> 
-                    <input class="label" type="text" placeholder="cpf" name="cpf">
+                    <input class="label" type="text" placeholder="cpf(sem traços ou pontos" name="cpf">
                     <div class="linha-cadastro">
                         <input class="label" type="text" placeholder="nome" name="nome">
                         <input class="label" type="text" placeholder="sobrenome" name="sobrenome">
@@ -59,7 +59,7 @@
                     <input class="button" type="submit" value="Cadastrar"> 
                     <a href="">Ja está cadastrado? <strong class="link-comum">Faça login</strong></a>
                 </form>
-                <p class="paragrafo-comum">Ao continuar o acesso, você concorda com a <p class="destaque">política de privacidade</p></p>
+                <p class="paragrafo-comum">Ao continuar o acesso, você concorda com a <p class="destaque">política de privacidade</p>
                 <?php
                     $cpf = addlashes($_POST['cpf']);
                     $nome = addlashes($_POST['nome']);
@@ -79,7 +79,11 @@
                         if($u->msgErro == ""){
                             if($senha == $confSenha){
                                 if($u->cadastrar($nome, $sobrenome, $telefone, $email, $senha, $sexo, $endereco)){
-                                    echo "Cadastrado com sucesso!";
+                                    ?>
+                                    <div class="msg-sucesso">                    
+                                    "Cadastrado com sucesso!"
+                                    </div>
+                                    <?php
                                 }
                                 else{
                                     ?>

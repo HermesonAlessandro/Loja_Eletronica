@@ -49,8 +49,8 @@
                 </form>
                 <p class="paragrafo-comum">Ao continuar o acesso, você concorda com a <p class="destaque">política de privacidade</p></p>
                     <?php
-                        if(isset($_POST['email']))
-                        {
+            if(isset($_POST['email']))
+            {
             $email = addcslashes($_POST['email']);
             $senha = addcslashes($_POST['senha']);
             $tipoUso = addcslashes($_POST['tipoUso']);
