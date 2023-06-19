@@ -67,6 +67,48 @@
                     <input class="label" type="text" placeholder="imagem(nome)" name="imagem">    
                     <input class="button" type="submit" value="Adcionar"> 
                 </form>
+                <?php
+                    $nome = addlashes($_POST['nome']);
+                    $tipo = addlashes($_POST['tipo']);
+                    $descricao = addlashes($_POST['descricao']);  
+                    $preco = addlashes($_POST['preco']);
+                    $desconto = addlashes($_POST['desconto']); 
+                    $quantidade = addlashes($_POST['quantidade']);
+                    $imagem = addcslashes($_POST['imagem']);
+
+                    require_once "produto.php";
+                    $p = new Produto;
+                    if(!empty($nome) && !empty($tipo) && !empty($descricao) && !empty($preco) && !empty($desconto) && !empty($quantidade) && 
+                    !empty($imagem)){
+                        $p->conectar("power_tech","localhost", "root", "");
+                        if($u->msgErro == ""){
+                            if($u->cadastrar($nome, $tipo, $descricao, $preco, $desconto, $quantidade, $imagem)){
+                                ?>
+                                <div class="msg-sucesso">                    
+                                    "Adcionado com sucesso!"
+                                </div>
+                                <?php
+                            }
+                            else{
+                                    ?>
+                                    <div class="msg-erro">                    
+                                    "Produto já existente"
+                                    </div>
+                                    <?php
+                                }    
+                        }
+                        else{
+                            echo "Erro: ",$u->msErro;
+                        }
+                    }
+                    else{
+                        ?>
+                        <div class="msg-erro">                    
+                            "Preencha todos os campos!"
+                        </div>
+                        <?php
+                    }
+        ?>
             </div>
             <h1>Excluir Produto</h1>
             <div class="credencial">
