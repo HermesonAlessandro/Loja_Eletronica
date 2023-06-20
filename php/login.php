@@ -55,10 +55,12 @@
             $tipoUso = addslashes($_POST['tipoUso']);
 
             if(!empty($email) && !empty($senha) && !empty($tipoUso))
-            {
+            {      
+                require "usuario.php";
+                $u = new Usuario;
                 $u->conectar("power_tech","localhost","root","");
                 if($u->msgErro == ""){
-                    if($u->logar($email,$senha,$tipoUso))
+                    if($u->logar($email,$senha,$tipoUso) == true)
                     {
                         if($tipoUso == "cliente")
                         {

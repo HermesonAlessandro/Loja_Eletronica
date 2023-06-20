@@ -60,7 +60,7 @@
                 </form>
                 <p class="paragrafo-comum">Ao continuar o acesso, você concorda com a <p class="destaque">política de privacidade</p>
                 <?php
-                isset($_POST['cpf'])
+                if(isset($_POST['nome']))
                 {
                     $cpf = addslashes($_POST['cpf']);
                     $nome = addslashes($_POST['nome']);

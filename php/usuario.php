@@ -12,7 +12,7 @@ class Usuario{
         }
     }
     
-    public function cadastrar($cpf, $nome, $sobrenome, $numero, $email, $senha, $sexo, $endereco){
+    public function cadastrar($cpf, $nome, $sobrenome, $telefone, $email, $senha, $sexo, $endereco){
         global $pdo;
         $sql = $pdo->prepare("SELECT cpf FROM cliente WHERE email = :e");
         $sql->bindvalue(":e",$email);
@@ -31,16 +31,15 @@ class Usuario{
             $sql->bindValue(":sen", md5($senha));
             $sql->bindValue(":s", $sexo);
             $sql->bindValue(":en", $endereco);
-            $sql->execute();
             return true;
         }
     }
 
     public function logar($email, $senha, $tipoUso){
         global $pdo;
-        $sql = $pdo->prepare("SELECT cpf FROM ".$tipoUso." WHERE email = :e AND senha = :sen");
+        $sql = $pdo->prepare("SELECT cpf FROM :tip WHERE email = :e AND senha = :sen");
         $sql->bindValue(":e", $email);
-        $sql->bindValue(":sen", md5($senha));
+        $sql->bindValue(":sen", $senha);
         $sql->bindValue(":tip", $tipoUso);
         $sql->execute();
         if($sql->rowCount() > 0){
