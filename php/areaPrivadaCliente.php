@@ -47,11 +47,7 @@
             </div>
         </div>
         <div class="perfil">
-            <h1><?php
-                $sql = "SELECT * FROM administrador WHERE cpf='".$_SESSION['cpf']."'";                
-                $result = $mysqli->query($sql);
-                $adm_data = mysqli_fetch_assoc($result);
-                echo $adm_data['nome']." ".$adm_data['sobrenome'];
+            <h1><?php   
 
             ?></h1>
             <img src="../img/usuario.png" class="photo-usuario" width="119px" height="157px">

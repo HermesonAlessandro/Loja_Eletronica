@@ -5,6 +5,7 @@
         header("location: login.php");
         exit;
     }
+    include("conexao.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,6 +69,8 @@
                     <input class="button" type="submit" value="Adcionar"> 
                 </form>
                 <?php
+                if(isset($_POST['email']))
+                {
                     $nome = addlashes($_POST['nome']);
                     $tipo = addlashes($_POST['tipo']);
                     $descricao = addlashes($_POST['descricao']);  
@@ -108,6 +111,7 @@
                         </div>
                         <?php
                     }
+                }
         ?>
             </div>
             <h1>Excluir Produto</h1>

@@ -60,7 +60,7 @@
                 $u = new Usuario;
                 $u->conectar("power_tech","localhost","root","");
                 if($u->msgErro == ""){
-                    if($u->logar($email,$senha,$tipoUso) == true)
+                    if($u->logar($email,$senha,$tipoUso))
                     {
                         if($tipoUso == "cliente")
                         {
