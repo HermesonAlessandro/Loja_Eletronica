@@ -56,7 +56,7 @@
 
             ?></h1>
             <img src="../img/usuario.png" class="photo-usuario" width="119px" height="157px">
-            <h1>Adcionar Produto</h1>
+            <h1 id="titulo-espassado">Adicionar Produto</h1>
             <div class="credencial">
                 <form method="POST">
                     <input class="label" type="text" placeholder="nome" name="nome">
@@ -69,23 +69,23 @@
                     <input class="button" type="submit" value="Adcionar"> 
                 </form>
                 <?php
-                if(isset($_POST['email']))
+                if(isset($_POST['nome']))
                 {
-                    $nome = addlashes($_POST['nome']);
-                    $tipo = addlashes($_POST['tipo']);
-                    $descricao = addlashes($_POST['descricao']);  
-                    $preco = addlashes($_POST['preco']);
-                    $desconto = addlashes($_POST['desconto']); 
-                    $quantidade = addlashes($_POST['quantidade']);
-                    $imagem = addcslashes($_POST['imagem']);
+                    $nome = addslashes($_POST['nome']);
+                    $tipo = addslashes($_POST['tipo']);
+                    $descricao = addslashes($_POST['descricao']);  
+                    $preco = addslashes($_POST['preco']);
+                    $desconto = addslashes($_POST['desconto']); 
+                    $quantidade = addslashes($_POST['quantidade']);
+                    $imagem = addslashes($_POST['imagem']);
 
                     require_once "produto.php";
                     $p = new Produto;
-                    if(!empty($nome) && !empty($tipo) && !empty($descricao) && !empty($preco) && !empty($desconto) && !empty($quantidade) && 
+                    if(!empty($nome) && !empty($tipo) && !empty($descricao) && !empty($preco) && !empty($quantidade) && 
                     !empty($imagem)){
                         $p->conectar("power_tech","localhost", "root", "");
-                        if($u->msgErro == ""){
-                            if($u->cadastrar($nome, $tipo, $descricao, $preco, $desconto, $quantidade, $imagem)){
+                        if($p->msgErro == ""){
+                            if($p->cadastrar($nome, $tipo, $descricao, $preco, $desconto, $quantidade, $imagem)){
                                 ?>
                                 <div class="msg-sucesso">                    
                                     "Adcionado com sucesso!"
@@ -113,6 +113,39 @@
                     }
                 }
         ?>
+            </div>
+            <div class="tabela">
+                <?php
+                        ?>
+                        <table>
+                            <thead>
+                                <th>ID</th>
+                                <th>Nome</th>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                                <th>Preco</th>
+                                <th>Desconto</th>
+                                <th>Quantidade</th>
+                                <th>Imagem</th>
+                            </thead>
+                            <tbody>
+                                <?php
+                                while ($produto_data = mysqli_fetch_assoc($p->dados)){?>
+                                    <td><?php $produto_data['id'] ?></td>
+                                    <td><?php $produto_data['nome'] ?></td>
+                                    <td><?php $produto_data['tipo'] ?></td>
+                                    <td><?php $produto_data['descricao'] ?></td>
+                                    <td><?php $produto_data['preco'] ?></td>
+                                    <td><?php $produto_data['desconto'] ?></td>
+                                    <td><?php $produto_data['quantidade'] ?></td>
+                                    <td><?php $produto_data['imagem'] ?></td>
+                                <?php
+                                }
+                                ?>
+                            </tbody>   
+                        </table>
+                        <?php              
+                ?>
             </div>
             <h1>Excluir Produto</h1>
             <div class="credencial">

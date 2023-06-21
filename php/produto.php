@@ -1,6 +1,8 @@
 <?php
-public class Usuario{
+class Produto{
+    include('conexao.php');
     private $pdo;
+    public $dados;
     public $msgErro = "";
     public function conectar($nome, $host, $usuario, $senha){
         global $pdo;
@@ -13,25 +15,41 @@ public class Usuario{
     }
     public function cadastrar($nome, $tipo, $descricao, $preco, $desconto, $quantidade, $imagem){
             global $pdo;
-            sql = $pdo->prepare("SELECT $nome FROM produto WHERE preco = :pr");
-            sql->bindvalue(":pr",$preco);
+            $sql = $pdo->prepare("SELECT id FROM produto WHERE nome = :n");
+            $sql->bindvalue(":n",$nome);
             $sql->execute();
             if($sql->rowCount() > 0){
                 return false;   
             }
             else{
                 $sql = $pdo->prepare("INSERT INTO produto (nome, tipo, descricao, preco, desconto, quantidade, imagem) VALUES 
-                (:n, :tp, :de, :pr, :ds, :qu, img)");
-                $sql->bindValue(":n", $cpf);
-                $sql->bindValue(":tp", $nome);
-                $sql->bindValue("de", $sobrenome)
-                $sql->bindValue(":pr", md5($numero));
-                $sql->bindValue(":ds", $email);
-                $sql->bindValue(":qu", $senha);
-                $sql->bindValue(":img", $sexo);
+                (:n, :t, :d, :p, :de, :q, :img)");
+                $sql->bindValue(":n", $nome);
+                $sql->bindValue(":t", $tipo);
+                $sql->bindValue(":d", $descricao);
+                $sql->bindValue(":p", $preco);
+                $sql->bindValue(":de", $desconto);
+                $sql->bindValue(":q", $quantidade);
+                $sql->bindValue(":img", $imagem);
                 $sql->execute();
                 return true;
             }
+    }
+    public function listar(){
+        global $pdo;
+        global $dados:
+        $sql = $pdo->prepare("SELECT * FROM produto");
+        $sql->execute();
+        if($sql->rowCount() > 0){
+            return false;   
         }
+        else{
+            $dados = $mysqli->query($sql);
+            return true;
+        }
+    }
+    public function excluir($id,$nome){
+
+    }
 }
 ?>

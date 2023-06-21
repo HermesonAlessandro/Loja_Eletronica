@@ -33,9 +33,8 @@ class Usuario{
             $sql->bindValue(":en", $endereco);
             $sql->execute();
             return true;
-        }
+        }   
     }
-
     public function logar($email, $senha, $tipoUso){
         global $pdo;
         if($tipoUso == "cliente"){
@@ -50,7 +49,6 @@ class Usuario{
             $dado = $sql->fetch();
             session_start();
             $_SESSION['cpf'] = $dado['cpf'];
-            
             return true;
         }
         else{
